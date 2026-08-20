@@ -944,7 +944,7 @@ func TestApplyErrorBillingFromBilledUsage_ComputesCostWhenTokensAlreadyParsed(t 
 // and must not leak into input/output.
 func TestApplyInternalCallCosts_DenormalizesGuardrailToAdditional(t *testing.T) {
 	store := newTestStore(t)
-	plugin, err := Init(context.Background(), &Config{}, testLogger{}, store, newTestPricingManager(t), nil)
+	plugin, err := Init(context.Background(), &Config{}, testLogger{}, store, nil, newTestPricingManager(t), nil)
 	if err != nil {
 		t.Fatalf("Init() error = %v", err)
 	}
